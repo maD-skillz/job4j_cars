@@ -6,21 +6,25 @@ import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
+import java.math.BigInteger;
+import java.sql.Timestamp;
+
 @Data
-@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@Entity
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
-@Table(name = "cars_user")
-public class User {
-
+@EqualsAndHashCode(onlyExplicitlyIncluded = true)
+@Table(name = "price_history")
+public class PriceHistory {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @EqualsAndHashCode.Include
-    private Integer id;
+    private int id;
 
-    private String login;
+    private BigInteger before;
 
-    private String password;
+    private BigInteger after;
+
+    private Timestamp created;
 
 }
