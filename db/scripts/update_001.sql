@@ -8,5 +8,5 @@ create table if not exists auto_post (
     id serial primary key,
     text text not null,
     created timestamp not null,
-    autoUserId int not null references auto_user(id)
+    auto_user_id int not null references auto_user(id)
 );
